@@ -85,6 +85,12 @@ export const constantRoutes = [
         name: 'icon',
         component: () => import('@/views/demo/icon'),
         meta: { title: 'icon', icon: 'el-icon-football' }
+      },
+      {
+        path: 'layout',
+        name: 'layout',
+        component: () => import('@/views/demo/layout'),
+        meta: { title: 'layout', icon: 'el-icon-baseball' }
       }
     ]
   },
