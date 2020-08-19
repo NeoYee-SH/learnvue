@@ -4,7 +4,7 @@
     <ul class="fas-icon-list">
       <li v-for="(item, index) in iconList" :key="index" @click="selectedIcon(item)">
         <el-popover trigger="hover">
-            <span> {{ item }}</span>
+          <span> {{ item }}</span>
           <i slot="reference" class="fas" :class="[item]" />
         </el-popover>
       </li>

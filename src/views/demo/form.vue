@@ -11,7 +11,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="Activity time">
-          <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" class="form-width" />
+        <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" class="form-width" />
       </el-form-item>
       <el-form-item label="Instant delivery">
         <el-switch v-model="form.delivery" class="form-width" />
@@ -30,8 +30,8 @@
           <el-radio label="Venue" />
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="Activity form" >
-        <el-input v-model="form.desc" type="textarea" class="form-width"/>
+      <el-form-item label="Activity form">
+        <el-input v-model="form.desc" type="textarea" class="form-width" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">Create</el-button>
@@ -72,9 +72,9 @@ export default {
 </script>
 
 <style scoped>
-    .line{
-        text-align: center;
-    }
+  .line{
+      text-align: center;
+  }
   .form-width {
     width: 800px;
   }

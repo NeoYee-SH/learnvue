@@ -91,6 +91,12 @@ export const constantRoutes = [
         name: 'layout',
         component: () => import('@/views/demo/layout'),
         meta: { title: 'layout', icon: 'el-icon-baseball' }
+      },
+      {
+        path: 'input',
+        name: 'input',
+        component: () => import('@/views/demo/input'),
+        meta: { title: 'input', icon: 'el-icon-bangzhu' }
       }
     ]
   },
