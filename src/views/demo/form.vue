@@ -2,28 +2,22 @@
   <div class="app-container">
     <el-form ref="form" :model="form" label-width="120px">
       <el-form-item label="Activity name">
-        <el-input v-model="form.name" />
+        <el-input v-model="form.name" class="form-width" />
       </el-form-item>
       <el-form-item label="Activity zone">
-        <el-select v-model="form.region" placeholder="please select your zone">
+        <el-select v-model="form.region" placeholder="please select your zone" class="form-width">
           <el-option label="Zone one" value="shanghai" />
           <el-option label="Zone two" value="beijing" />
         </el-select>
       </el-form-item>
       <el-form-item label="Activity time">
-        <el-col :span="11">
-          <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%;" />
-        </el-col>
-        <el-col :span="2" class="line">-</el-col>
-        <el-col :span="11">
-          <el-time-picker v-model="form.date2" type="fixed-time" placeholder="Pick a time" style="width: 100%;" />
-        </el-col>
+          <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" class="form-width" />
       </el-form-item>
       <el-form-item label="Instant delivery">
-        <el-switch v-model="form.delivery" />
+        <el-switch v-model="form.delivery" class="form-width" />
       </el-form-item>
       <el-form-item label="Activity type">
-        <el-checkbox-group v-model="form.type">
+        <el-checkbox-group v-model="form.type" class="form-width">
           <el-checkbox label="Online activities" name="type" />
           <el-checkbox label="Promotion activities" name="type" />
           <el-checkbox label="Offline activities" name="type" />
@@ -31,18 +25,13 @@
         </el-checkbox-group>
       </el-form-item>
       <el-form-item label="Resources">
-        <el-radio-group v-model="form.resource">
+        <el-radio-group v-model="form.resource" class="form-width">
           <el-radio label="Sponsor" />
           <el-radio label="Venue" />
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="Activity form">
-        <el-input v-model="form.desc" type="textarea" />
-      </el-form-item>
-      <el-form-item label="Gender">
-        <el-select v-model="form.gender" placeholder="please select your gender" filterable :allow-create="true">
-          <el-option v-for="(item, key) in genderOptions" :key="key" :label="item" :value="item" />
-        </el-select>
+      <el-form-item label="Activity form" >
+        <el-input v-model="form.desc" type="textarea" class="form-width"/>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">Create</el-button>
@@ -56,11 +45,6 @@
 export default {
   data() {
     return {
-      genderOptions: [
-        '未知',
-        '男',
-        '女'
-      ],
       form: {
         name: '',
         region: '',
@@ -69,8 +53,7 @@ export default {
         delivery: false,
         type: [],
         resource: '',
-        desc: '',
-        gender: '未知'
+        desc: ''
       }
     }
   },
@@ -92,4 +75,7 @@ export default {
     .line{
         text-align: center;
     }
+  .form-width {
+    width: 800px;
+  }
 </style>
