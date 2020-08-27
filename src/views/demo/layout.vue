@@ -52,6 +52,28 @@
       </el-row>
       <el-row :gutter="20">
         <el-col :span="8">
+          <el-form-item label="活动附件：" style="width: 420px">
+            <el-upload
+              action="eric"
+              list-type="picture-card"
+              :http-request="receiptsUpload"
+              :on-preview="handlePreview"
+              :auto-upload="true"
+              :file-list="fileList1"
+              :on-remove="handleReceiptsRemove"
+            >
+              <i class="el-icon-plus" />
+            </el-upload>
+          </el-form-item>
+        </el-col>
+        <el-col :span="8">
+          <el-form-item label="活动日期" style="width: 420px">
+            <el-date-picker v-model="form.date1" type="date" placeholder="选择日期" />
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="8">
           <el-form-item label="活动性质" style="width: 420px">
             <el-checkbox-group v-model="form.type">
               <el-checkbox label="美食" name="type" />
@@ -91,6 +113,9 @@
         </el-col>
       </el-row>
     </el-form>
+    <el-dialog :visible.sync="dialogVisible">
+      <img width="100%" :src="dialogImageUrl" alt="">
+    </el-dialog>
   </div>
 </template>
 
@@ -114,7 +139,12 @@ export default {
       },
       fileList: [
         { name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }
-      ]
+      ],
+      fileList1: [
+        { name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }
+      ],
+      dialogVisible: false,
+      dialogImageUrl: ''
     }
   },
   created() {
@@ -127,7 +157,16 @@ export default {
       console.log(file, fileList)
     },
     handlePreview(file) {
+      this.dialogImageUrl = file.url
+      this.dialogVisible = true
       console.log(file)
+    },
+    handleReceiptsRemove(file, fileList) {
+      this.fileList1 = fileList
+      console.log(this.fileList1)
+    },
+    receiptsUpload(file) {
+      this.fileList1.push({ name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' })
     }
   }
 }
