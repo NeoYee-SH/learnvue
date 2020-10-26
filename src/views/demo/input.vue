@@ -8,13 +8,13 @@
         <el-input v-model="form.decimal" placeholder="支持两位小数" class="form-width" @input="form.decimal = form.decimal.match(pattern.decimal)[0]" />
       </el-form-item>
       <el-form-item label="English:" prop="english">
-        <el-input v-model="form.english" placeholder="支持英文字母+数字+半角的逗号和句号" class="form-width" @input="form.english = form.english.match(pattern.english)[0]"/>
+        <el-input v-model="form.english" placeholder="支持英文字母+数字+半角的逗号和句号" class="form-width" @input="form.english = form.english.match(pattern.english)[0]" />
       </el-form-item>
       <el-form-item label="Chinese:" prop="chinese">
-        <el-input v-model="form.chinese" class="form-width" placeholder="支持中文" @input="form.chinese = form.chinese.match(pattern.chinese)[0]"/>
+        <el-input v-model="form.chinese" class="form-width" placeholder="支持中文" @input="form.chinese = form.chinese.match(pattern.chinese)[0]" />
       </el-form-item>
       <el-form-item label="Mobile:" prop="mobile">
-        <el-input v-model="form.mobile" class="form-width" placeholder="支持11位手机号" @input="form.mobile = form.mobile.match(pattern.integer)[0]"/>
+        <el-input v-model="form.mobile" class="form-width" placeholder="支持11位手机号" @input="form.mobile = form.mobile.match(pattern.integer)[0]" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">Create</el-button>

@@ -101,6 +101,22 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/css',
+    component: Layout,
+    redirect: '/css',
+    name: 'Css',
+    meta: { title: 'Css', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'less',
+        name: 'Less',
+        component: () => import('@/views/css/less'),
+        meta: { title: 'Less', icon: 'table' }
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
