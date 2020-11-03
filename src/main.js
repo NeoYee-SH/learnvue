@@ -15,6 +15,26 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
+Vue.use(Viewer, {
+  defaultOptions: {
+    zIndex: 9999,
+    title: false, //	显示当前图片的标题
+    scalable: true, // 图片是否可翻转
+    rotatable: true, // 图片是否可旋转
+    tooltip: false, // 显示缩放百分比
+    navbar: false, // 显示缩略图导航
+    loop: false,
+    loading: false
+
+  }
+})
+
+import SliderVerificationCode from 'slider-verification-code';
+import 'slider-verification-code/lib/slider-verification-code.css';
+
+Vue.use(SliderVerificationCode);
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

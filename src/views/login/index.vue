@@ -41,6 +41,15 @@
         </span>
       </el-form-item>
 
+      <SliderVerificationCode v-model="value" style="border-radius: 4px; margin-bottom: 20px;" @change="handleChange">
+        <template slot="content">
+          {{ text }}
+        </template>
+        <template slot="icon">
+          <i class="icon icon-test" />
+        </template>
+      </SliderVerificationCode>
+
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
       <div class="tips">
@@ -73,6 +82,8 @@ export default {
       }
     }
     return {
+      text: '向右拖动滑块填充拼图',
+      value: false,
       loginForm: {
         username: 'admin',
         password: '111111'
@@ -95,6 +106,9 @@ export default {
     }
   },
   methods: {
+    handleChange(value){
+      console.log('您验证结果为:', value)
+    },
     showPwd() {
       if (this.passwordType === 'password') {
         this.passwordType = ''
@@ -233,5 +247,9 @@ $light_gray:#eee;
     cursor: pointer;
     user-select: none;
   }
+}
+
+#app > div > form > div.app-drag > div.background {
+  border-radius: 4px;
 }
 </style>
