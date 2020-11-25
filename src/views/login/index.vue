@@ -56,7 +56,18 @@
         <span style="margin-right:20px;">username: admin</span>
         <span> password: any</span>
       </div>
-
+      <drag-verify-img-chip
+              ref="dragVerify"
+              :text="text"
+              :imgsrc="img"
+              :isPassing.sync="isPassing"
+              :showRefresh="true"
+              handlerIcon="fa fa-angle-double-right"
+              successIcon="fa fa-check-circle-o"
+              @passcallback="handlePass"
+              @refresh="handleRefresh"
+      >
+      </drag-verify-img-chip>
     </el-form>
   </div>
 </template>
@@ -82,6 +93,8 @@ export default {
       }
     }
     return {
+      img: 'https://yimijianfang.github.io/vue-drag-verify/static/img/t3.f6f8c53.png',
+      isPassing: false,
       text: '向右拖动滑块填充拼图',
       value: false,
       loginForm: {
@@ -106,6 +119,12 @@ export default {
     }
   },
   methods: {
+    handleRefresh() {
+      console.log('re')
+    },
+    handlePass() {
+      console.log('pass')
+    },
     handleChange(value){
       console.log('您验证结果为:', value)
     },

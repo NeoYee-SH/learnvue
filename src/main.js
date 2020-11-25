@@ -35,6 +35,9 @@ import SliderVerificationCode from 'slider-verification-code';
 import 'slider-verification-code/lib/slider-verification-code.css';
 
 Vue.use(SliderVerificationCode);
+
+import DragVerifyImgChip from 'vue-drag-verify-img-chip';
+Vue.use(DragVerifyImgChip);
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
